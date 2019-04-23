@@ -8,5 +8,6 @@ RUN tar -xvf go1.12.2.linux-amd64.tar.gz
 RUN mv go /usr/local
 ENV GOROOT=/usr/local/go
 ENV PATH=$GOROOT/bin:$PATH
-ENTRYPOINT ["go", "version"]
+RUN apt-get install -y gnupg git rng-tools
+#ENTRYPOINT ["go", "version"]
 
